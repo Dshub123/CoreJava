@@ -1,0 +1,15 @@
+package com.demo.operators;
+
+public class Operators {
+	
+	public static void main(String[] args) {
+		
+		
+		//Increment operator ++ and Decrement operator --
+		int x = 4;
+		x++;
+		System.out.println(x);
+	
+	}
+
+}
