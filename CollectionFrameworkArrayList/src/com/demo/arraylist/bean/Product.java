@@ -1,5 +1,7 @@
 package com.demo.arraylist.bean;
 
+import java.util.Objects;
+
 public class Product {
 	
 	private Integer productId;
@@ -10,6 +12,10 @@ public class Product {
 	
 	public Product() {
 		super();
+	}
+	
+	public Product(Double productPrice) {
+		this.productPrice = productPrice;
 	}
 
 	public Product(Integer productId,String productName, String productDesc, Integer productQty, Double productPrice) {
@@ -50,7 +56,23 @@ public class Product {
 	public void setProductPrice(Double productPrice) {
 		this.productPrice = productPrice;
 	}
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		return Objects.equals(productDesc, other.productDesc) && Objects.equals(productId, other.productId)
+				&& Objects.equals(productName, other.productName) && Objects.equals(productPrice, other.productPrice)
+				&& Objects.equals(productQty, other.productQty);
+	}
 
+	
 	@Override
 	public String toString() {
 		return "[productName=" + productName + ", productDesc=" + productDesc + ", productQty=" + productQty

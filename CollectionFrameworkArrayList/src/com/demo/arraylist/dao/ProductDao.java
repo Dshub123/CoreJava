@@ -18,4 +18,6 @@ public interface ProductDao {
 
 	List<Product> getByQty(int qty);
 
+	List<Product> orderByPrice();
+
 }

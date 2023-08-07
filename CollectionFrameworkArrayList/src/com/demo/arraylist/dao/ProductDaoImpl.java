@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.demo.arraylist.bean.Product;
+import com.demo.arraylist.comparators.PriceComparator;
 
 public class ProductDaoImpl implements ProductDao{
 	
@@ -82,8 +83,15 @@ public class ProductDaoImpl implements ProductDao{
 			return tempList;
 		}
 		
-		return null;
+		return null; 
 		//return plist.stream().filter(x->x.getProductQty()>qty).collect(Collectors.toList());
+	}
+
+	
+	@Override
+	public List<Product> orderByPrice() {
+		plist.sort(new PriceComparator());
+		return plist;
 	}
 	
 	

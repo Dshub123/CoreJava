@@ -59,13 +59,13 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public List<Product> sortByPrice() {
 		
-		return null;
+		return pdao.orderByPrice();
 	}
 
 	@Override
 	public List<Product> findByqty(int qty) {
 		
-		return null;
+		return pdao.getByQty(qty);
 	}
 
 	@Override
